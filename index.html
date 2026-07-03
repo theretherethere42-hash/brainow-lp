@@ -53,15 +53,15 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --navy: #EFFAFF;
-    --navy-mid: #DCF1FB;
-    --blue: #0284C7;
-    --cyan: #22B8E8;
-    --cyan-dim: rgba(34,184,232,0.14);
-    --white: #0D2B36;
-    --gray: #5A7A87;
-    --card-bg: rgba(13,43,54,0.035);
-    --card-border: rgba(34,184,232,0.3);
+    --navy: #FFF0F5;
+    --navy-mid: #FCDDE9;
+    --blue: #D6266F;
+    --cyan: #FF4D94;
+    --cyan-dim: rgba(255,77,148,0.14);
+    --white: #3A0D24;
+    --gray: #8A5B73;
+    --card-bg: rgba(58,13,36,0.035);
+    --card-border: rgba(255,77,148,0.3);
   }
 
   html { scroll-behavior: smooth; }
@@ -94,7 +94,7 @@
     padding: 20px 5%;
     position: fixed;
     top: 0; left: 0; right: 0;
-    background: rgba(240,250,255,0.85);
+    background: rgba(255,240,245,0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--card-border);
     z-index: 100;
@@ -125,7 +125,7 @@
     font-size: 13px !important;
     transition: background 0.2s !important;
   }
-  .nav-cta:hover { background: #0EA5C7 !important; color: #fff !important; }
+  .nav-cta:hover { background: #C21F72 !important; color: #fff !important; }
 
   /* ── Hero ── */
   #hero {
@@ -174,7 +174,7 @@
 
   .hero-metaphor {
     font-size: 15px;
-    color: rgba(13,43,54,0.6);
+    color: rgba(58,13,36,0.6);
     margin-bottom: 48px;
     font-style: italic;
   }
@@ -188,7 +188,7 @@
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, var(--blue), #056789);
+    background: linear-gradient(135deg, var(--blue), #A81C5C);
     color: #fff;
     padding: 16px 36px;
     border-radius: 8px;
@@ -196,9 +196,9 @@
     font-weight: 700;
     font-size: 16px;
     transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 0 40px rgba(2,132,167,0.4);
+    box-shadow: 0 0 40px rgba(214,38,111,0.4);
   }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 50px rgba(2,132,167,0.5); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 50px rgba(214,38,111,0.5); }
 
   .btn-secondary {
     background: transparent;
@@ -273,7 +273,7 @@
     padding: 32px;
     transition: border-color 0.3s, transform 0.3s;
   }
-  .pain-card:hover { border-color: rgba(34,184,232,0.4); transform: translateY(-4px); }
+  .pain-card:hover { border-color: rgba(255,77,148,0.4); transform: translateY(-4px); }
 
   .pain-icon {
     width: 44px; height: 44px;
@@ -300,15 +300,15 @@
     content: '—';
     position: absolute;
     left: 0;
-    color: rgba(34,184,232,0.5);
+    color: rgba(255,77,148,0.5);
   }
 
   /* ── Solution / Steps ── */
   #solution { }
 
   .solution-metaphor {
-    background: linear-gradient(135deg, rgba(2,132,167,0.12), rgba(34,184,232,0.06));
-    border: 1px solid rgba(2,132,167,0.3);
+    background: linear-gradient(135deg, rgba(214,38,111,0.12), rgba(255,77,148,0.06));
+    border: 1px solid rgba(214,38,111,0.3);
     border-radius: 16px;
     padding: 40px 48px;
     margin-bottom: 64px;
@@ -399,7 +399,7 @@
     align-items: flex-start;
     gap: 10px;
     padding: 10px 0;
-    border-top: 1px solid rgba(13,43,54,0.08);
+    border-top: 1px solid rgba(58,13,36,0.08);
     font-size: 13px;
   }
   .service-feature .dot {
@@ -479,10 +479,10 @@
   .compare-table thead th:first-child { text-align: left; }
   .compare-table td:first-child { text-align: left; color: var(--gray); }
 
-  .compare-table tbody tr { border-bottom: 1px solid rgba(13,43,54,0.05); }
+  .compare-table tbody tr { border-bottom: 1px solid rgba(58,13,36,0.05); }
   .compare-table tbody tr:last-child td { border-bottom: none; }
 
-  .compare-table tbody tr:hover td { background: rgba(34,184,232,0.03); }
+  .compare-table tbody tr:hover td { background: rgba(255,77,148,0.03); }
 
   .col-brainow { color: var(--cyan); font-weight: 800; font-size: 15px; }
   .col-other { color: var(--gray); }
@@ -505,7 +505,7 @@
   }
   .pricing-card.featured {
     border-color: var(--blue);
-    background: linear-gradient(135deg, rgba(2,132,167,0.1), rgba(34,184,232,0.05));
+    background: linear-gradient(135deg, rgba(214,38,111,0.1), rgba(255,77,148,0.05));
   }
   .pricing-card:hover { border-color: var(--cyan); }
 
@@ -538,7 +538,7 @@
   .pricing-items { list-style: none; }
   .pricing-items li {
     padding: 10px 0;
-    border-top: 1px solid rgba(13,43,54,0.08);
+    border-top: 1px solid rgba(58,13,36,0.08);
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -669,7 +669,7 @@
 
   .form-field input,
   .form-field textarea {
-    background: rgba(13,43,54,0.05);
+    background: rgba(58,13,36,0.05);
     border: 1px solid var(--card-border);
     border-radius: 8px;
     padding: 12px 16px;
@@ -720,13 +720,13 @@
     padding: 24px;
     transition: border-color 0.3s, transform 0.3s;
   }
-  .target-card:hover { border-color: rgba(34,184,232,0.4); transform: translateY(-3px); }
+  .target-card:hover { border-color: rgba(255,77,148,0.4); transform: translateY(-3px); }
   .target-icon { font-size: 28px; margin-bottom: 10px; }
   .target-card h4 { font-size: 14px; font-weight: 800; margin-bottom: 6px; }
   .target-card p { font-size: 12px; color: var(--gray); }
   .target-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
   .target-tag {
-    background: rgba(34,184,232,0.1);
+    background: rgba(255,77,148,0.1);
     color: var(--cyan);
     font-size: 10px;
     font-weight: 600;
@@ -1175,7 +1175,7 @@
       </div>
     </div>
     <!-- 資料請求フォーム -->
-    <div style="background:#fff; border-radius:16px; padding:40px; max-width:680px; margin:0 auto 40px; box-shadow:0 4px 32px rgba(2,132,167,0.10); border:2px solid var(--card-border);">
+    <div style="background:#fff; border-radius:16px; padding:40px; max-width:680px; margin:0 auto 40px; box-shadow:0 4px 32px rgba(214,38,111,0.10); border:2px solid var(--card-border);">
       <div style="text-align:center; margin-bottom:28px;">
         <div style="display:inline-block; background:var(--cyan-dim); color:var(--cyan); font-size:12px; font-weight:700; letter-spacing:0.15em; padding:4px 14px; border-radius:100px; margin-bottom:12px;">無料資料請求</div>
         <h3 style="font-size:22px; font-weight:900; color:var(--white); margin-bottom:8px;">BRAINOWの詳細資料を<br>今すぐ無料で受け取る</h3>
@@ -1309,7 +1309,7 @@ function draw() {
         ctx.beginPath();
         ctx.moveTo(nodes[i].x, nodes[i].y);
         ctx.lineTo(nodes[j].x, nodes[j].y);
-        ctx.strokeStyle = `rgba(34, 184, 232, ${alpha})`;
+        ctx.strokeStyle = `rgba(255, 77, 148, ${alpha})`;
         ctx.lineWidth = 0.8;
         ctx.stroke();
       }
@@ -1320,7 +1320,7 @@ function draw() {
   nodes.forEach(n => {
     ctx.beginPath();
     ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(34, 184, 232, 0.7)';
+    ctx.fillStyle = 'rgba(255, 77, 148, 0.7)';
     ctx.fill();
   });
 
