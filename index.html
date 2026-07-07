@@ -49,6 +49,21 @@
   }
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"AI導入に詳しい社員がいなくても大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"はい、問題ありません。BRAINOWは社内にAI担当がいない企業を前提に設計されたサービスです。企画・設定・運用・改善まで専任担当が一気通貫でサポートします。"}},
+    {"@type":"Question","name":"費用はどのくらいかかりますか？","acceptedAnswer":{"@type":"Answer","text":"初期費用は0円です。2週間の実証実験（PoC）も無料でご提供しています。本格導入後の月額費用は企業規模・導入範囲によって異なります。"}},
+    {"@type":"Question","name":"導入までどのくらい時間がかかりますか？","acceptedAnswer":{"@type":"Answer","text":"最短1週間で稼働開始できます。初回ヒアリング→PoC設計→2週間の実証実験という流れで、最初の成果を1ヶ月以内に確認いただけます。"}},
+    {"@type":"Question","name":"既存のシステムやツールと連携できますか？","acceptedAnswer":{"@type":"Answer","text":"Slack・Teams・Chatwork・Salesforce・kintone・各種ERPなど主要なビジネスツールとの連携実績があります。"}},
+    {"@type":"Question","name":"セキュリティや情報漏洩は大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"社内データは外部のAI学習には使用されません。エンタープライズ向けAPIを使用し、データの暗号化・アクセス制御を徹底。NDA締結の上でご支援します。"}},
+    {"@type":"Question","name":"効果が出なかった場合はどうなりますか？","acceptedAnswer":{"@type":"Answer","text":"2週間のPoCで効果を数字で確認してから本格導入を判断いただけます。効果がなければ費用は一切かかりません。"}}
+  ]
+}
+</script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -706,6 +721,69 @@
   .footer-logo { font-size: 18px; font-weight: 800; letter-spacing: 0.1em; color: var(--cyan); }
   footer p { font-size: 12px; color: var(--gray); }
 
+  /* ── Animations ── */
+  @keyframes pulse-ring {
+    0%   { box-shadow: 0 0 0 0 rgba(255,77,148,0.5), 0 0 40px rgba(214,38,111,0.4); }
+    70%  { box-shadow: 0 0 0 14px rgba(255,77,148,0), 0 0 40px rgba(214,38,111,0.4); }
+    100% { box-shadow: 0 0 0 0 rgba(255,77,148,0), 0 0 40px rgba(214,38,111,0.4); }
+  }
+  @keyframes float-y {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+  }
+  @keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; } 50% { opacity: 0; }
+  }
+
+  .btn-cta-pulse { animation: pulse-ring 2.2s ease-out infinite; }
+
+  /* ── Ticker (social proof) ── */
+  .ticker-wrap {
+    overflow: hidden;
+    background: var(--cyan-dim);
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    padding: 10px 0;
+    white-space: nowrap;
+  }
+  .ticker-inner {
+    display: inline-flex;
+    gap: 64px;
+    animation: ticker-scroll 28s linear infinite;
+  }
+  .ticker-inner span { font-size: 13px; font-weight: 600; color: var(--cyan); }
+  .ticker-inner span::before { content: '✦ '; }
+
+  /* ── FAQ ── */
+  .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+  .faq-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .faq-q {
+    width: 100%; text-align: left; background: none; border: none; cursor: pointer;
+    padding: 20px 24px; display: flex; justify-content: space-between; align-items: center;
+    font-size: 16px; font-weight: 700; color: var(--white); gap: 16px;
+  }
+  .faq-q .faq-icon { font-size: 20px; flex-shrink: 0; transition: transform 0.3s; color: var(--cyan); }
+  .faq-q.open .faq-icon { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    font-size: 14px; color: var(--gray); line-height: 1.8;
+    padding: 0 24px;
+  }
+  .faq-a.open { max-height: 300px; padding: 0 24px 20px; }
+
+  /* ── Typing cursor ── */
+  .typing-cursor { display: inline-block; animation: blink 0.8s step-end infinite; color: var(--cyan); }
+
   /* ── Targets ── */
   #targets { }
   .targets-grid {
@@ -760,6 +838,22 @@
   </div>
 </nav>
 
+<!-- Ticker -->
+<div class="ticker-wrap" style="margin-top:64px;">
+  <div class="ticker-inner">
+    <span>導入後3ヶ月で問い合わせ対応時間を68%削減</span>
+    <span>2週間のPoCで費用対効果を数字で確認</span>
+    <span>AI専任担当不要・伴走サポート付き</span>
+    <span>初期費用0円・最短1週間で稼働開始</span>
+    <span>従業員50〜1,000名規模の中小企業に特化</span>
+    <span>導入後3ヶ月で問い合わせ対応時間を68%削減</span>
+    <span>2週間のPoCで費用対効果を数字で確認</span>
+    <span>AI専任担当不要・伴走サポート付き</span>
+    <span>初期費用0円・最短1週間で稼働開始</span>
+    <span>従業員50〜1,000名規模の中小企業に特化</span>
+  </div>
+</div>
+
 <!-- Hero -->
 <section id="hero">
   <div class="hero-inner">
@@ -783,11 +877,11 @@
     </div>
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="stat-num">80%</div>
+        <div class="stat-num" data-target="80" data-suffix="%">80%</div>
         <div class="stat-label">社内調査時間の削減</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">50%</div>
+        <div class="stat-num" data-target="50" data-suffix="%">50%</div>
         <div class="stat-label">問い合わせ件数の減少</div>
       </div>
       <div class="stat-item">
@@ -1227,6 +1321,40 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq" class="section-pad" style="background: var(--navy-mid);">
+  <div class="section-head" style="text-align:center;">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">よくある質問</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q"><span>AI導入に詳しい社員がいなくても大丈夫ですか？</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">はい、問題ありません。BRAINOWは「社内にAI担当がいない」企業を前提に設計されたサービスです。企画・設定・運用・改善まで、専任担当が一気通貫でサポートします。お客様に必要なのは「どの業務を改善したいか」を教えていただくことだけです。</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>費用はどのくらいかかりますか？</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">初期費用は0円です。2週間の実証実験（PoC）も無料でご提供しています。本格導入後の月額費用は企業規模・導入範囲によって異なりますが、詳細は資料請求またはご相談の際にお伝えします。</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>導入までどのくらい時間がかかりますか？</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">最短1週間で稼働開始できます。初回ヒアリング（60分）→PoC設計（3〜5日）→2週間の実証実験という流れで、最初の成果を1ヶ月以内に確認いただけます。</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>既存のシステムやツールと連携できますか？</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">Slack・Teams・Chatwork・Salesforce・kintone・各種ERPなど、主要なビジネスツールとの連携実績があります。現在お使いのシステムをお伝えいただければ、対応可否をすぐにご回答します。</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>セキュリティや情報漏洩は大丈夫ですか？</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">社内データは外部のAI学習には使用されません。エンタープライズ向けのAPIを使用し、データの暗号化・アクセス制御を徹底しています。NDA締結の上でご支援しますので、安心してご相談ください。</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>効果が出なかった場合はどうなりますか？</span><span class="faq-icon">+</span></button>
+      <div class="faq-a">2週間のPoCで効果を数字で確認してから本格導入を判断していただけます。「使えない」と判断された場合、費用は一切かかりません。成果が出るまで伴走することが私たちのコミットメントです。</div>
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer>
   <div class="footer-logo">BRAINOW</div>
@@ -1329,7 +1457,7 @@ function draw() {
 
 draw();
 
-// Scroll-triggered fade-in
+// Scroll-triggered fade-in with stagger
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -1339,11 +1467,60 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.pain-card, .step-card, .service-card, .kpi-card, .target-card, .roadmap-card, .pricing-card, .step-item').forEach(el => {
+document.querySelectorAll('.pain-card, .step-card, .service-card, .kpi-card, .target-card, .roadmap-card, .pricing-card, .step-item, .faq-item').forEach((el, i) => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(24px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  el.style.transition = `opacity 0.5s ease ${(i % 4) * 0.1}s, transform 0.5s ease ${(i % 4) * 0.1}s`;
   observer.observe(el);
+});
+
+// Count-up animation for stat numbers
+function countUp(el) {
+  const target = parseFloat(el.dataset.target);
+  const isFloat = el.dataset.target.includes('.');
+  const suffix = el.dataset.suffix || '';
+  const duration = 1800;
+  const start = performance.now();
+  function step(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = target * eased;
+    el.textContent = (isFloat ? value.toFixed(1) : Math.floor(value)) + suffix;
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      countUp(e.target);
+      countObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-num[data-target]').forEach(el => countObserver.observe(el));
+
+// CTA button pulse
+document.querySelectorAll('button[type="submit"], .btn-primary').forEach(el => {
+  el.classList.add('btn-cta-pulse');
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(b => {
+      b.classList.remove('open');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  });
 });
 </script>
 </body>
