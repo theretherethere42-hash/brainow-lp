@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ作成・整備代行｜問い合わせ履歴からナレッジ化｜BRAINOW BPO</title>
+  <meta name="description" content="問い合わせ履歴・社内規程・マニュアルを整理し、AIチャットボットや社内AIに投入できるFAQデータを作成します。重複排除・表記統一・Q&A構造化まで一括代行。">
+  <link rel="canonical" href="https://brainow.net/bpo/faq/">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brainow.net/bpo/faq/">
+  <meta property="og:title" content="FAQ作成・整備代行｜問い合わせ履歴からナレッジ化｜BRAINOW BPO">
+  <meta property="og:description" content="問い合わせ履歴・社内規程・マニュアルを整理し、AIチャットボットや社内AIに投入できるFAQデータを作成します。重複排除・表記統一・Q&A構造化まで一括代行。">
+  <meta property="og:site_name" content="BRAINOW">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAQ作成・整備代行｜問い合わせ履歴からナレッジ化｜BRAINOW BPO">
+  <meta name="twitter:description" content="問い合わせ履歴・社内規程・マニュアルを整理し、AIチャットボットや社内AIに投入できるFAQデータを作成します。重複排除・表記統一・Q&A構造化まで一括代行。">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../bpo.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "何件分の問い合わせ履歴から始められますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "100件程度から対応できます。まずは規模をお知らせください。小規模から試してみることもできます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "問い合わせ履歴がバラバラな形式ですが大丈夫ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Excel・CSVメール形式・PDFなど複数形式が混在していても対応できます。まず収集・棚卸しから実施します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "BRAINOWを契約していなくても依頼できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、FAQ整備単体でもご依頼いただけます。整備したデータをどのシステムに使うかは問いません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "古い問い合わせと新しい問い合わせが混在していますが？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "日付・更新状況を確認しながら整理します。古い情報は「廃止」としてリストに残し、削除理由も記録します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "完成したFAQの定期的な更新も依頼できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "月次・四半期ごとの定期更新プランをご用意しています。新しい問い合わせが来るたびに反映する継続契約も対応します。"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BRAINOW",
+      "url": "https://brainow.net/",
+      "provider": {
+        "@type": "Organization",
+        "name": "Momentum Architect株式会社"
+      },
+      "email": "brainow-ai@momentum-arc.jp"
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">BRAINOW <span>BPO</span></a>
+    <a href="#contact-form" class="nav-cta">無料相談を申し込む</a>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="/">トップ</a>
+    <span class="sep">›</span>
+    <a href="/bpo/">BPOサービス</a>
+    <span class="sep">›</span>
+    <span>FAQ作成・整備代行</span>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="lp">
+      <div class="hero-badge">BRAINOW BPO / FAQ作成・整備代行</div>
+      <h1>「問い合わせ履歴」をFAQに整理して、<em>AIが答えられる状態</em>に変える</h1>
+      <p class="hero-sub">問い合わせ履歴・マニュアル・社内規程から、担当者がいなくてもAIが正確に回答できるFAQデータを作成します。</p>
+      <p class="hero-desc">重複・古い情報・表記ゆれを整理し、質問と回答の粒度を統一。ExcelやCSV形式で納品し、BRAINOWへの登録まで対応します。</p>
+      <div class="hero-btns">
+        <a href="#contact-form" class="btn-white">無料相談を申し込む</a>
+        <a href="/bpo/" class="btn-ghost">サービス一覧を見る</a>
+      </div>
+      <div class="hero-note">どの形式のデータでも対応可能。まずはサンプル資料を確認します</div>
+    </div>
+  </div>
+
+  <div class="lp">
+
+    <!-- Target -->
+    <div class="section">
+      <div class="sl">01 / TARGET</div>
+      <h2>こんな課題をお持ちの企業様へ</h2>
+      <p class="lead">問い合わせ対応や社内FAQに課題を感じているチームをサポートします。</p>
+      <div class="target-grid">
+        <div class="target-card">
+          <span class="target-icon">🗃️</span>
+          <div class="target-body">
+            <strong>問い合わせ件数が多く、対応に時間がかかっている</strong>
+            <p>カスタマーサポート部門、コールセンター</p>
+          </div>
+        </div>
+        <div class="target-card">
+          <span class="target-icon">📋</span>
+          <div class="target-body">
+            <strong>FAQが古く、社員が毎回担当者に確認している</strong>
+            <p>管理部門・人事・総務</p>
+          </div>
+        </div>
+        <div class="target-card">
+          <span class="target-icon">🤖</span>
+          <div class="target-body">
+            <strong>AIチャットボットを導入したいが、FAQデータが整っていない</strong>
+            <p>IT・DX推進部門</p>
+          </div>
+        </div>
+        <div class="target-card">
+          <span class="target-icon">📞</span>
+          <div class="target-body">
+            <strong>同じ質問が何度も来て、対応品質にばらつきがある</strong>
+            <p>EC・通販のCS担当</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Issues -->
+    <div class="section">
+      <div class="sl">02 / ISSUES</div>
+      <h2>FAQ整備が進まない6つの課題</h2>
+      <p class="lead">多くの企業で共通するFAQデータの問題点をまとめました。</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 01</div>
+          <strong>FAQが数年前のまま更新されていない</strong>
+          <p>古い情報を参照したAIが誤回答を返すリスクがあります</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 02</div>
+          <strong>問い合わせ履歴がExcelやメールに散在している</strong>
+          <p>どの質問が多いか、集計・分析できていない状態です</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 03</div>
+          <strong>Q&Aの粒度がバラバラ</strong>
+          <p>1つの質問に対して5行の回答があれば、1行しかないものもある</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 04</div>
+          <strong>重複した内容のFAQが複数存在する</strong>
+          <p>AIが複数の似た回答を参照し、精度が落ちます</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 05</div>
+          <strong>カテゴリや分類が統一されていない</strong>
+          <p>担当者によって登録方法がバラバラになっています</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 06</div>
+          <strong>整理する社内リソースがない</strong>
+          <p>本来の業務と並行してFAQ整備まで手が回らない状態です</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Services -->
+    <div class="section">
+      <div class="sl">03 / PROCESS</div>
+      <h2>FAQ作成・整備の作業内容</h2>
+      <p class="lead">データ収集から納品まで、4つのステップで対応します。</p>
+      <div class="process-steps">
+        <div class="pstep">
+          <div class="pstep-n">01</div>
+          <strong>問い合わせ履歴の収集・分類</strong>
+          <p>過去のメール・チャット・コールログを収集し、質問の種類ごとに分類します</p>
+          <div class="pstep-eg">例：3,000件の問い合わせを20カテゴリに分類</div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-n">02</div>
+          <strong>重複・古い情報の整理</strong>
+          <p>同じ内容の質問をまとめ、古い回答や廃止された手順を除去します</p>
+          <div class="pstep-eg">例：FAQ候補300件→整理後150件に統合</div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-n">03</div>
+          <strong>Q&A構造化・表現統一</strong>
+          <p>「質問文」と「回答文」の粒度を統一し、AIが検索しやすい形式に変換します</p>
+          <div class="pstep-eg">例：箇条書き回答→1質問1回答形式に変換</div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-n">04</div>
+          <strong>カテゴリ・タグ付与と納品</strong>
+          <p>問い合わせカテゴリ・キーワードタグを付与してExcel/CSV形式で納品します</p>
+          <div class="pstep-eg">例：BRAINOWへの登録用データとして納品</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Deliverables -->
+    <div class="section">
+      <div class="sl">04 / DELIVERABLES</div>
+      <h2>納品物一覧</h2>
+      <p class="lead">整備完了後にお渡しするデータと資料です。</p>
+      <div class="deliver-grid">
+        <div class="deliver-card">
+          <span class="deliver-icon">📊</span>
+          <div class="deliver-title">FAQ一覧データ（Excel/CSV）</div>
+          <div class="deliver-desc">Q&A・カテゴリ・タグ・更新日を含む整備済みデータ</div>
+        </div>
+        <div class="deliver-card">
+          <span class="deliver-icon">📝</span>
+          <div class="deliver-title">問い合わせ分類レポート</div>
+          <div class="deliver-desc">どのカテゴリの問い合わせが多いかを集計したレポート</div>
+        </div>
+        <div class="deliver-card">
+          <span class="deliver-icon">🗂️</span>
+          <div class="deliver-title">重複・廃止FAQリスト</div>
+          <div class="deliver-desc">削除・統合した理由を記録したメンテナンスログ</div>
+        </div>
+        <div class="deliver-card">
+          <span class="deliver-icon">🤖</span>
+          <div class="deliver-title">BRAINOW登録用データ</div>
+          <div class="deliver-desc">そのままシステムに投入できる形式のデータ（別途ご相談）</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Flow -->
+    <div class="section">
+      <div class="sl">05 / FLOW</div>
+      <h2>ご依頼から納品までの流れ</h2>
+      <p class="lead">ヒアリングから納品まで、5つのステップで進めます。</p>
+      <div class="flow-list">
+        <div class="flow-item">
+          <div class="flow-n">1</div>
+          <div>
+            <div class="flow-title">ヒアリング・データ確認</div>
+            <div class="flow-desc">現在のFAQ状況、問い合わせ量、ご利用のシステムをヒアリングします</div>
+            <span class="flow-period">1〜2営業日</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-n">2</div>
+          <div>
+            <div class="flow-title">サンプル整理・方針確認</div>
+            <div class="flow-desc">一部データをサンプル整理し、粒度・分類方針をご確認いただきます</div>
+            <span class="flow-period">3〜5営業日</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-n">3</div>
+          <div>
+            <div class="flow-title">本整理・FAQ作成</div>
+            <div class="flow-desc">承認後、全データのFAQ整備を実施します。進捗は週次で共有します</div>
+            <span class="flow-period">規模による</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-n">4</div>
+          <div>
+            <div class="flow-title">品質チェック・修正</div>
+            <div class="flow-desc">誤り・抜け漏れ・粒度の乱れをダブルチェックします</div>
+            <span class="flow-period">2〜3営業日</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-n">5</div>
+          <div>
+            <div class="flow-title">納品・登録サポート</div>
+            <div class="flow-desc">指定形式で納品。BRAINOWへの登録設定もサポートします</div>
+            <span class="flow-period">納品日</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Benefits -->
+    <div class="section">
+      <div class="sl">06 / BENEFITS</div>
+      <h2>FAQ整備で得られる効果</h2>
+      <p class="lead">整備されたFAQデータは、組織全体の生産性を底上げします。</p>
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <span class="benefit-icon">⏱️</span>
+          <div class="benefit-title">同じ質問への対応時間を削減</div>
+          <div class="benefit-desc">担当者が毎回回答を調べる時間を削減。FAQが整備されれば、AIが代わりに回答します</div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">📈</span>
+          <div class="benefit-title">AI回答精度が上がる</div>
+          <div class="benefit-desc">整備されたFAQデータを投入することで、AIの正答率が大幅に向上します</div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🔄</span>
+          <div class="benefit-title">新人教育時間の短縮</div>
+          <div class="benefit-desc">よくある質問と回答がFAQとして整備されることで、口頭伝達に頼らない教育が可能になります</div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🔍</span>
+          <div class="benefit-title">問い合わせ傾向の把握</div>
+          <div class="benefit-desc">分類・集計レポートにより、製品改善や業務改善のヒントを得られます</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Merits -->
+    <div class="section">
+      <div class="sl">07 / WHY BRAINOW BPO</div>
+      <h2>BRAINOW BPOを選ぶ理由</h2>
+      <p class="lead">FAQ整備からAI投入まで、一気通貫で対応できます。</p>
+      <div class="merit-grid">
+        <div class="merit-card">
+          <div class="m-icon">🔗</div>
+          <strong>整備したFAQをそのまま投入</strong>
+          <p>BPOで整備したFAQデータをBRAINOWに直接投入。別途データ変換の手間がありません</p>
+        </div>
+        <div class="merit-card">
+          <div class="m-icon">🔁</div>
+          <strong>継続的な更新にも対応</strong>
+          <p>月次でFAQを更新するプランがあります。新しい問い合わせを定期的に取り込み、AIの精度を維持します</p>
+        </div>
+        <div class="merit-card">
+          <div class="m-icon">🛡️</div>
+          <strong>NDA締結で安全に</strong>
+          <p>問い合わせ履歴は機密情報です。必ずNDA締結の上、安全に取り扱います</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Pricing -->
+    <div class="section">
+      <div class="sl">08 / PRICING</div>
+      <h2>料金について</h2>
+      <p class="lead">作業量・問い合わせ件数・納品形式に応じて個別見積もりします。</p>
+      <div class="price-card">
+        <div class="price-sub">個別見積もり</div>
+        <div class="price-items">
+          <div class="price-item">
+            <span class="pi-label">対象件数</span>
+            <span class="pi-val">100件〜（規模問わず相談可）</span>
+          </div>
+          <div class="price-item">
+            <span class="pi-label">納品形式</span>
+            <span class="pi-val">Excel / CSV / BRAINOW登録用データ</span>
+          </div>
+          <div class="price-item">
+            <span class="pi-label">初回ヒアリング</span>
+            <span class="pi-val">無料</span>
+          </div>
+          <div class="price-item">
+            <span class="pi-label">NDA締結</span>
+            <span class="pi-val">対応可</span>
+          </div>
+        </div>
+        <div class="price-note">まずは対象データの確認から始めます。お気軽にご相談ください。</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- FAQ -->
+    <div class="section">
+      <div class="sl">09 / FAQ</div>
+      <h2>よくあるご質問</h2>
+      <p class="lead">FAQ整備代行に関してよくいただく質問をまとめました。</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>何件分の問い合わせ履歴から始められますか？</div>
+          <div class="faq-a">100件程度から対応できます。まずは規模をお知らせください。小規模から試してみることもできます。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>問い合わせ履歴がバラバラな形式ですが大丈夫ですか？</div>
+          <div class="faq-a">Excel・CSVメール形式・PDFなど複数形式が混在していても対応できます。まず収集・棚卸しから実施します。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>BRAINOWを契約していなくても依頼できますか？</div>
+          <div class="faq-a">はい、FAQ整備単体でもご依頼いただけます。整備したデータをどのシステムに使うかは問いません。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>古い問い合わせと新しい問い合わせが混在していますが？</div>
+          <div class="faq-a">日付・更新状況を確認しながら整理します。古い情報は「廃止」としてリストに残し、削除理由も記録します。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>完成したFAQの定期的な更新も依頼できますか？</div>
+          <div class="faq-a">月次・四半期ごとの定期更新プランをご用意しています。新しい問い合わせが来るたびに反映する継続契約も対応します。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CTA -->
+    <div class="section" id="contact-form">
+      <div class="cta-block">
+        <div class="cta-label">無料相談受付中</div>
+        <h2>自社のFAQデータがAI活用できる状態かどうか、無料で確認します</h2>
+        <p>現在お持ちの問い合わせ履歴・既存FAQ・マニュアルを確認し、どのような整理が必要かをご案内します。</p>
+        <ul class="cta-reassure">
+          <li>✦ 初回ヒアリング無料</li>
+          <li>✦ サンプル整理後に判断OK</li>
+          <li>✦ NDA締結対応</li>
+          <li>✦ 件数問わず相談可</li>
+        </ul>
+      </div>
+
+      <!-- Form -->
+      <div class="form-wrap">
+        <form id="page-form" action="https://formspree.io/f/xbdvlnkn" method="POST">
+          <input type="hidden" name="_subject" value="【BRAINOW BPO】FAQ整備のお問い合わせ">
+          <input type="hidden" name="種別" value="FAQ作成・整備代行">
+          <div class="form-grid">
+            <div class="form-group full">
+              <label>会社名 <span class="req">必須</span></label>
+              <input type="text" name="company" required placeholder="例：株式会社サンプル">
+            </div>
+            <div class="form-group full">
+              <label>お名前 <span class="req">必須</span></label>
+              <input type="text" name="name" required placeholder="例：山田 太郎">
+            </div>
+            <div class="form-group full">
+              <label>メールアドレス <span class="req">必須</span></label>
+              <input type="email" name="email" required placeholder="例：yamada@example.com">
+            </div>
+            <div class="form-group full">
+              <label>電話番号 <span class="opt">任意</span></label>
+              <input type="tel" name="phone" placeholder="例：03-1234-5678">
+            </div>
+            <div class="form-group full">
+              <label>対象データの種類 <span class="opt">任意</span></label>
+              <select name="data_type">
+                <option value="">選択してください</option>
+                <option value="問い合わせ履歴（メール）">問い合わせ履歴（メール）</option>
+                <option value="問い合わせ履歴（チャット）">問い合わせ履歴（チャット）</option>
+                <option value="既存FAQデータ">既存FAQデータ</option>
+                <option value="コールセンターログ">コールセンターログ</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label>お問い合わせ内容 <span class="opt">任意</span></label>
+              <textarea name="message" rows="5" placeholder="現在の課題・問い合わせ件数・お急ぎの度合いなど、お気軽にお書きください"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="form-submit">無料相談を申し込む</button>
+          <div class="success-msg" style="display:none;">
+            <div class="s-icon">✓</div>
+            <p>送信が完了しました。担当者より1〜2営業日以内にご連絡します。</p>
+          </div>
+        </form>
+      </div>
+
+      <div class="cta-btns">
+        <a href="mailto:brainow-ai@momentum-arc.jp" class="btn-base">メールで直接問い合わせる</a>
+      </div>
+      <p class="cta-contact">お急ぎの場合は <a href="mailto:brainow-ai@momentum-arc.jp">brainow-ai@momentum-arc.jp</a> まで直接ご連絡ください。</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Related -->
+    <div class="section">
+      <div class="sl">RELATED SERVICES</div>
+      <h2>関連するBPOサービス</h2>
+      <p class="lead">FAQ整備と合わせてご活用いただけるサービスです。</p>
+      <div class="related-grid">
+        <a href="../manual/" class="related-card">
+          <span class="rc-icon">📖</span>
+          <div class="rc-title">マニュアル作成・整理代行</div>
+          <div class="rc-desc">マニュアルを社内AI検索に対応した形式に整理</div>
+        </a>
+        <a href="../voc/" class="related-card">
+          <span class="rc-icon">📣</span>
+          <div class="rc-title">VOC分析・ナレッジ化</div>
+          <div class="rc-desc">コールセンターや通販の問い合わせを分類・FAQ化</div>
+        </a>
+        <a href="../ec/" class="related-card">
+          <span class="rc-icon">🏪</span>
+          <div class="rc-title">EC・通販向けBPO</div>
+          <div class="rc-desc">注文・返品・商品問い合わせのFAQ整備</div>
+        </a>
+        <a href="../callcenter/" class="related-card">
+          <span class="rc-icon">📞</span>
+          <div class="rc-title">コールセンター向けBPO</div>
+          <div class="rc-desc">応対履歴からトークスクリプト・FAQを整備</div>
+        </a>
+        <a href="../" class="related-card">
+          <span class="rc-icon">🏭</span>
+          <div class="rc-title">RAGデータ整備BPOトップ</div>
+          <div class="rc-desc">BPOサービス全体のご案内</div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /.lp -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Momentum Architect株式会社</p>
+    <nav>
+      <a href="/">BRAINOW トップ</a>
+      <a href="/bpo/">BPOサービス</a>
+      <a href="mailto:brainow-ai@momentum-arc.jp">brainow-ai@momentum-arc.jp</a>
+    </nav>
+  </footer>
+
+  <script>
+    const form = document.getElementById('page-form');
+    const successMsg = form.querySelector('.success-msg');
+    const submitBtn = form.querySelector('.form-submit');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.querySelector('.form-grid').style.display = 'none';
+          submitBtn.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = '無料相談を申し込む';
+          alert('送信に失敗しました。しばらく経ってから再度お試しください。');
+        }
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '無料相談を申し込む';
+        alert('送信に失敗しました。しばらく経ってから再度お試しください。');
+      }
+    });
+  </script>
+
+</body>
+</html>

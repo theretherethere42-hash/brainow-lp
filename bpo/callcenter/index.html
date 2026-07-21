@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コールセンター向けナレッジ整備BPO｜応対品質平準化とAIナレッジ構築｜BRAINOW BPO</title>
+  <meta name="description" content="コールセンター・コンタクトセンターの応対履歴を分類・整理し、FAQ・トークスクリプト・オペレーター向けナレッジを作成。AIへの投入データまで一括代行。">
+  <link rel="canonical" href="https://brainow.net/bpo/callcenter/">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brainow.net/bpo/callcenter/">
+  <meta property="og:title" content="コールセンター向けナレッジ整備BPO｜応対品質平準化とAIナレッジ構築｜BRAINOW BPO">
+  <meta property="og:description" content="コールセンター・コンタクトセンターの応対履歴を分類・整理し、FAQ・トークスクリプト・オペレーター向けナレッジを作成。AIへの投入データまで一括代行。">
+  <meta property="og:site_name" content="BRAINOW">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="コールセンター向けナレッジ整備BPO｜応対品質平準化とAIナレッジ構築｜BRAINOW BPO">
+  <meta name="twitter:description" content="コールセンター・コンタクトセンターの応対履歴を分類・整理し、FAQ・トークスクリプト・オペレーター向けナレッジを作成。AIへの投入データまで一括代行。">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../bpo.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "応対録音はテキスト化してもらえますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、録音ファイルの文字起こしから対応できます。文字起こし後に分類・整理を実施します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "コールリーズンの分類軸は誰が決めますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "サンプル分類を実施した上で、貴社の実態に合わせた分類軸を一緒に決めます。既存の分類軸がある場合はそれをベースにします。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "トークスクリプトの内容は誰が確認しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "作成後に現場のスーパーバイザーやベテランオペレーターにご確認いただき、修正を反映します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "個人情報が含まれる応対記録はどう扱いますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NDA締結・個人情報マスキング処理の上で対応します。分析後は適切に廃棄します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "FAQとスクリプトの定期更新も依頼できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、月次・四半期での定期更新プランをご用意しています。新しい問い合わせパターンを随時反映します。"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BRAINOW",
+      "url": "https://brainow.net/",
+      "provider": {
+        "@type": "Organization",
+        "name": "Momentum Architect株式会社"
+      },
+      "email": "brainow-ai@momentum-arc.jp"
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">BRAINOW <span>BPO</span></a>
+    <a href="#contact-form" class="nav-cta">無料相談を申し込む</a>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="/">トップ</a>
+    <span class="sep">›</span>
+    <a href="/bpo/">BPOサービス</a>
+    <span class="sep">›</span>
+    <span>コールセンター向けナレッジ整備</span>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="lp">
+      <div class="hero-badge">BRAINOW BPO / コールセンター向けナレッジ整備</div>
+      <h1>コールセンターの応対履歴を整理して、<em>誰でも同じ品質で答えられる</em>ナレッジを作る</h1>
+      <p class="hero-sub">応対履歴の分類・コールリーズン整備・FAQ作成・トークスクリプト整備まで、コールセンターのナレッジ構築をBPOで一括代行します。</p>
+      <p class="hero-desc">ベテランオペレーターだけが知っているノウハウを文書化し、新人がすぐ使えるFAQ・スクリプト・検索ナレッジを作ります。</p>
+      <div class="hero-btns">
+        <a href="#contact-form" class="btn-white">無料相談を申し込む</a>
+        <a href="/bpo/" class="btn-ghost">サービス一覧を見る</a>
+      </div>
+      <div class="hero-note">電話・チャット・メール対応など複数チャネルの履歴に対応</div>
+    </div>
+  </div>
+
+  <div class="lp">
+
+    <!-- Target -->
+    <div class="section">
+      <div class="sl">01 / TARGET</div>
+      <h2>こんな課題をお持ちの企業様へ</h2>
+      <p class="lead">コールセンター・コンタクトセンターのナレッジ課題を抱えるチームをサポートします。</p>
+      <div class="target-grid">
+        <div class="target-card">
+          <span class="target-icon">📞</span>
+          <div class="target-body">
+            <strong>新人オペレーターの教育期間が長く、早期退職も多い</strong>
+            <p>コールセンター・コンタクトセンター</p>
+          </div>
+        </div>
+        <div class="target-card">
+          <span class="target-icon">📋</span>
+          <div class="target-body">
+            <strong>コールリーズンが整備されておらず、傾向把握ができていない</strong>
+            <p>CS部門管理職</p>
+          </div>
+        </div>
+        <div class="target-card">
+          <span class="target-icon">📖</span>
+          <div class="target-body">
+            <strong>ベテランと新人で応対品質に差がある</strong>
+            <p>コンタクトセンター運営部門</p>
+          </div>
+        </div>
+        <div class="target-card">
+          <span class="target-icon">🤖</span>
+          <div class="target-body">
+            <strong>AIチャットボットや社内AIを導入して問い合わせを削減したい</strong>
+            <p>DX推進・IT部門</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Issues -->
+    <div class="section">
+      <div class="sl">02 / ISSUES</div>
+      <h2>コールセンターのナレッジ整備が進まない6つの課題</h2>
+      <p class="lead">多くのコールセンターで共通する、ナレッジ管理の問題点をまとめました。</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 01</div>
+          <strong>コールリーズンが担当者任せで統一されておらず、集計できない</strong>
+          <p>同じ問い合わせが違うカテゴリで記録されています</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 02</div>
+          <strong>FAQが古く、実際に来る問い合わせと内容が合っていない</strong>
+          <p>オペレーターが独自判断で回答しており、ばらつきが生じています</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 03</div>
+          <strong>ベテランのノウハウが文書化されておらず、退職リスクがある</strong>
+          <p>経験豊富なオペレーターが辞めると対応品質が下がります</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 04</div>
+          <strong>新人が一人前になるまでOJT期間が3〜6ヶ月かかる</strong>
+          <p>その間、品質のばらつきが続きます</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 05</div>
+          <strong>トークスクリプトがバージョン違いで複数存在し、どれが最新かわからない</strong>
+          <p>古いスクリプトを使ったオペレーターが誤案内をするケースがあります</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 06</div>
+          <strong>応対履歴が蓄積されているが、分析・活用できていない</strong>
+          <p>データはあるのにナレッジ化されていない状態です</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Services -->
+    <div class="section">
+      <div class="sl">03 / PROCESS</div>
+      <h2>コールセンター向けナレッジ整備の作業内容</h2>
+      <p class="lead">応対履歴の収集から納品まで、4つのステップで対応します。</p>
+      <div class="process-steps">
+        <div class="pstep">
+          <div class="pstep-n">01</div>
+          <strong>応対履歴の分類・コールリーズン整備</strong>
+          <p>応対記録を収集し、コールリーズン分類軸を統一。件数・傾向を集計します</p>
+          <div class="pstep-eg">例：6ヶ月分の応対記録を18コールリーズンに分類・集計</div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-n">02</div>
+          <strong>FAQ・トークスクリプト作成</strong>
+          <p>多い問い合わせをもとにFAQ候補とトークスクリプトを作成します</p>
+          <div class="pstep-eg">例：上位30コールリーズン分のトークスクリプトと、FAQ50件を作成</div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-n">03</div>
+          <strong>オペレーター向けナレッジ整備</strong>
+          <p>複雑な対応パターン・例外ケース・エスカレーション基準を文書化します</p>
+          <div class="pstep-eg">例：難易度の高い問い合わせ20件のシナリオ別対応フローを作成</div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-n">04</div>
+          <strong>AI投入用ナレッジデータとして納品</strong>
+          <p>FAQ・スクリプト・ナレッジをAI投入用形式で納品します</p>
+          <div class="pstep-eg">例：BRAINOW投入用ナレッジデータ＋オペレーター研修用資料を同時納品</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Deliverables -->
+    <div class="section">
+      <div class="sl">04 / DELIVERABLES</div>
+      <h2>納品物一覧</h2>
+      <p class="lead">整備完了後にお渡しするデータと資料です。</p>
+      <div class="deliver-grid">
+        <div class="deliver-card">
+          <span class="deliver-icon">📋</span>
+          <div class="deliver-title">コールリーズン分析レポート</div>
+          <div class="deliver-desc">問い合わせ種別・件数・傾向をまとめた月次分析資料</div>
+        </div>
+        <div class="deliver-card">
+          <span class="deliver-icon">📖</span>
+          <div class="deliver-title">FAQ・トークスクリプト集</div>
+          <div class="deliver-desc">オペレーターが即使えるFAQとトークスクリプト（Excel/Word形式）</div>
+        </div>
+        <div class="deliver-card">
+          <span class="deliver-icon">🗂️</span>
+          <div class="deliver-title">ナレッジデータベース（AI投入用）</div>
+          <div class="deliver-desc">BRAINOW等に投入できる構造化ナレッジデータ</div>
+        </div>
+        <div class="deliver-card">
+          <span class="deliver-icon">📚</span>
+          <div class="deliver-title">新人教育用資料</div>
+          <div class="deliver-desc">研修で使える基本対応フロー・よくある問い合わせ集</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Flow -->
+    <div class="section">
+      <div class="sl">05 / FLOW</div>
+      <h2>ご依頼から納品までの流れ</h2>
+      <p class="lead">ヒアリングから納品まで、5つのステップで進めます。</p>
+      <div class="flow-list">
+        <div class="flow-item">
+          <div class="flow-n">1</div>
+          <div>
+            <div class="flow-title">ヒアリング・データ確認</div>
+            <div class="flow-desc">コールセンターの規模・問い合わせ量・現在のFAQ状況をヒアリングします</div>
+            <span class="flow-period">1〜2営業日</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-n">2</div>
+          <div>
+            <div class="flow-title">サンプル分類・方針確認</div>
+            <div class="flow-desc">応対記録の一部をサンプル分類し、分類方針をご確認いただきます</div>
+            <span class="flow-period">3〜5営業日</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-n">3</div>
+          <div>
+            <div class="flow-title">本分類・スクリプト作成</div>
+            <div class="flow-desc">全データの分類・FAQ・スクリプト作成を実施します</div>
+            <span class="flow-period">規模による</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-n">4</div>
+          <div>
+            <div class="flow-title">品質チェック・修正</div>
+            <div class="flow-desc">内容のダブルチェックと現場オペレーターへの確認を実施します</div>
+            <span class="flow-period">2〜3営業日</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-n">5</div>
+          <div>
+            <div class="flow-title">納品・AI投入サポート</div>
+            <div class="flow-desc">指定形式で納品。BRAINOWへの投入設定もサポートします</div>
+            <span class="flow-period">納品日</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Benefits -->
+    <div class="section">
+      <div class="sl">06 / BENEFITS</div>
+      <h2>ナレッジ整備で得られる効果</h2>
+      <p class="lead">整備されたナレッジは、コールセンター全体の品質と生産性を向上させます。</p>
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <span class="benefit-icon">📉</span>
+          <div class="benefit-title">新人の一人前化期間を短縮</div>
+          <div class="benefit-desc">FAQとスクリプトが整備されることで、独立したOJT期間を短縮できます</div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🔒</span>
+          <div class="benefit-title">応対品質が安定する</div>
+          <div class="benefit-desc">スクリプトとナレッジが統一されることで、オペレーターによるばらつきが減ります</div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🤖</span>
+          <div class="benefit-title">AIが問い合わせの一次対応を担う</div>
+          <div class="benefit-desc">整備したナレッジをBRAINOWに投入することで、AIが一次対応を担い、オペレーターへのエスカレーションを減らします</div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🔍</span>
+          <div class="benefit-title">問い合わせ傾向で業務改善ができる</div>
+          <div class="benefit-desc">コールリーズン分析により、対応フロー・製品・Webサイト改善につながるヒントが得られます</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Merits -->
+    <div class="section">
+      <div class="sl">07 / WHY BRAINOW BPO</div>
+      <h2>BRAINOW BPOを選ぶ理由</h2>
+      <p class="lead">ナレッジ整備からAI投入まで、一気通貫で対応できます。</p>
+      <div class="merit-grid">
+        <div class="merit-card">
+          <div class="m-icon">🔗</div>
+          <strong>ナレッジ整備からAI投入まで一括</strong>
+          <p>BPOで整備したFAQ・スクリプトをBRAINOWにそのまま投入できます</p>
+        </div>
+        <div class="merit-card">
+          <div class="m-icon">📞</div>
+          <strong>コールセンター業務に精通した整備</strong>
+          <p>コールリーズン分類・エスカレーション設計など、コールセンター特有の構造を熟知した整備を行います</p>
+        </div>
+        <div class="merit-card">
+          <div class="m-icon">🔄</div>
+          <strong>定期更新で常に最新のナレッジを維持</strong>
+          <p>月次で新しい問い合わせを取り込む継続契約が可能です</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- FAQ -->
+    <div class="section">
+      <div class="sl">08 / FAQ</div>
+      <h2>よくあるご質問</h2>
+      <p class="lead">コールセンター向けナレッジ整備BPOに関してよくいただく質問をまとめました。</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>応対録音はテキスト化してもらえますか？</div>
+          <div class="faq-a">はい、録音ファイルの文字起こしから対応できます。文字起こし後に分類・整理を実施します。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>コールリーズンの分類軸は誰が決めますか？</div>
+          <div class="faq-a">サンプル分類を実施した上で、貴社の実態に合わせた分類軸を一緒に決めます。既存の分類軸がある場合はそれをベースにします。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>トークスクリプトの内容は誰が確認しますか？</div>
+          <div class="faq-a">作成後に現場のスーパーバイザーやベテランオペレーターにご確認いただき、修正を反映します。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>個人情報が含まれる応対記録はどう扱いますか？</div>
+          <div class="faq-a">NDA締結・個人情報マスキング処理の上で対応します。分析後は適切に廃棄します。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>FAQとスクリプトの定期更新も依頼できますか？</div>
+          <div class="faq-a">はい、月次・四半期での定期更新プランをご用意しています。新しい問い合わせパターンを随時反映します。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CTA -->
+    <div class="section" id="contact-form">
+      <div class="cta-block">
+        <div class="cta-label">無料相談受付中</div>
+        <h2>コールセンターのナレッジがAI活用できる状態かどうか、無料で確認します</h2>
+        <p>現在の応対履歴・FAQ・スクリプトを確認し、どのような整理が必要かをご案内します。</p>
+        <ul class="cta-reassure">
+          <li>✦ 初回ヒアリング無料</li>
+          <li>✦ 録音の文字起こしから対応</li>
+          <li>✦ 個人情報マスキング対応</li>
+          <li>✦ 規模問わず相談可</li>
+        </ul>
+      </div>
+
+      <!-- Form -->
+      <div class="form-wrap">
+        <form id="page-form" action="https://formspree.io/f/xbdvlnkn" method="POST">
+          <input type="hidden" name="_subject" value="【BRAINOW BPO】コールセンター向けBPOのお問い合わせ">
+          <input type="hidden" name="種別" value="コールセンター向けナレッジ整備BPO">
+          <div class="form-grid">
+            <div class="form-group full">
+              <label>会社名 <span class="req">必須</span></label>
+              <input type="text" name="company" required placeholder="例：株式会社サンプル">
+            </div>
+            <div class="form-group full">
+              <label>お名前 <span class="req">必須</span></label>
+              <input type="text" name="name" required placeholder="例：山田 太郎">
+            </div>
+            <div class="form-group full">
+              <label>メールアドレス <span class="req">必須</span></label>
+              <input type="email" name="email" required placeholder="例：yamada@example.com">
+            </div>
+            <div class="form-group full">
+              <label>電話番号 <span class="opt">任意</span></label>
+              <input type="tel" name="phone" placeholder="例：03-1234-5678">
+            </div>
+            <div class="form-group full">
+              <label>対象データの種類 <span class="opt">任意</span></label>
+              <select name="data_type">
+                <option value="">選択してください</option>
+                <option value="コールセンター応対録音">コールセンター応対録音</option>
+                <option value="応対履歴テキスト">応対履歴テキスト</option>
+                <option value="既存FAQ・スクリプト">既存FAQ・スクリプト</option>
+                <option value="チャット・メール履歴">チャット・メール履歴</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label>お問い合わせ内容 <span class="opt">任意</span></label>
+              <textarea name="message" rows="5" placeholder="現在の課題・応対件数・お急ぎの度合いなど、お気軽にお書きください"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="form-submit">無料相談を申し込む</button>
+          <div class="success-msg" style="display:none;">
+            <div class="s-icon">✓</div>
+            <p>送信が完了しました。担当者より1〜2営業日以内にご連絡します。</p>
+          </div>
+        </form>
+      </div>
+
+      <div class="cta-btns">
+        <a href="mailto:brainow-ai@momentum-arc.jp" class="btn-base">メールで直接問い合わせる</a>
+      </div>
+      <p class="cta-contact">お急ぎの場合は <a href="mailto:brainow-ai@momentum-arc.jp">brainow-ai@momentum-arc.jp</a> まで直接ご連絡ください。</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Related -->
+    <div class="section">
+      <div class="sl">RELATED SERVICES</div>
+      <h2>関連するBPOサービス</h2>
+      <p class="lead">コールセンター向けBPOと合わせてご活用いただけるサービスです。</p>
+      <div class="related-grid">
+        <a href="../faq/" class="related-card">
+          <span class="rc-icon">📋</span>
+          <div class="rc-title">FAQ作成・整備代行</div>
+          <div class="rc-desc">問い合わせ履歴からFAQを整備</div>
+        </a>
+        <a href="../voc/" class="related-card">
+          <span class="rc-icon">📣</span>
+          <div class="rc-title">VOC分析・ナレッジ化</div>
+          <div class="rc-desc">問い合わせ・クレームの傾向分析</div>
+        </a>
+        <a href="../ec/" class="related-card">
+          <span class="rc-icon">🏪</span>
+          <div class="rc-title">EC・通販向けBPO</div>
+          <div class="rc-desc">EC・通販のCS問い合わせ整理</div>
+        </a>
+        <a href="../manual/" class="related-card">
+          <span class="rc-icon">📖</span>
+          <div class="rc-title">マニュアル作成・整理代行</div>
+          <div class="rc-desc">オペレーター向けマニュアルの整備</div>
+        </a>
+        <a href="../" class="related-card">
+          <span class="rc-icon">🏭</span>
+          <div class="rc-title">RAGデータ整備BPOトップ</div>
+          <div class="rc-desc">BPOサービス全体のご案内</div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /.lp -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Momentum Architect株式会社</p>
+    <nav>
+      <a href="/">BRAINOW トップ</a>
+      <a href="/bpo/">BPOサービス</a>
+      <a href="mailto:brainow-ai@momentum-arc.jp">brainow-ai@momentum-arc.jp</a>
+    </nav>
+  </footer>
+
+  <script>
+    const form = document.getElementById('page-form');
+    const successMsg = form.querySelector('.success-msg');
+    const submitBtn = form.querySelector('.form-submit');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.querySelector('.form-grid').style.display = 'none';
+          submitBtn.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = '無料相談を申し込む';
+          alert('送信に失敗しました。しばらく経ってから再度お試しください。');
+        }
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '無料相談を申し込む';
+        alert('送信に失敗しました。しばらく経ってから再度お試しください。');
+      }
+    });
+  </script>
+
+</body>
+</html>

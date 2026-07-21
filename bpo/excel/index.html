@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excelデータ整備・クレンジング｜顧客台帳・商品台帳のAI移行準備｜BRAINOW BPO</title>
+  <meta name="description" content="複数部署で管理するExcelデータの表記ゆれ・重複・項目不統一を整理。AI・CRM・FAQシステムへの移行用データを作成します。">
+  <link rel="canonical" href="https://brainow.net/bpo/excel/">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brainow.net/bpo/excel/">
+  <meta property="og:title" content="Excelデータ整備・クレンジング｜顧客台帳・商品台帳のAI移行準備｜BRAINOW BPO">
+  <meta property="og:description" content="複数部署で管理するExcelデータの表記ゆれ・重複・項目不統一を整理。AI・CRM・FAQシステムへの移行用データを作成します。">
+  <meta property="og:site_name" content="BRAINOW">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Excelデータ整備・クレンジング｜顧客台帳・商品台帳のAI移行準備｜BRAINOW BPO">
+  <meta name="twitter:description" content="複数部署で管理するExcelデータの表記ゆれ・重複・項目不統一を整理。AI・CRM・FAQシステムへの移行用データを作成します。">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../bpo.css">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "どんなExcelでも対応できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "基本的にはどんな形式のExcelでも対応できます。関数・マクロが組み込まれている複雑なファイルは別途ご相談ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "何件のデータから依頼できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "数百件から対応できます。大量データ（数万件以上）も対応できますが、規模に応じた見積もりを行います。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "データを預けることへのセキュリティは大丈夫ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NDA締結の上で対応します。受け取ったデータは業務目的以外では使用せず、納品後は適切に廃棄します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "複数ファイルを統合する場合、どのファイルが正しいか判断できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "更新日・作成者・内容の整合性を確認しながら、どのデータを正とするかをご相談の上で進めます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "整備後のデータ更新ルール作りも依頼できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、今後の入力ルール・フォーマット統一・更新フローの設計もサポートします。"
+          }
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BRAINOW",
+      "url": "https://brainow.net/",
+      "provider": {
+        "@type": "Organization",
+        "name": "Momentum Architect株式会社"
+      },
+      "email": "brainow-ai@momentum-arc.jp"
+    }
+  ]
+  </script>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">BRAINOW <span>BPO</span></a>
+    <a href="#contact-form" class="nav-cta">無料相談を申し込む</a>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <a href="/">トップ</a>
+    <span class="sep">›</span>
+    <a href="/bpo/">BPOサービス</a>
+    <span class="sep">›</span>
+    <span>Excelデータ整備・クレンジング</span>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="lp">
+      <div class="hero-badge">BRAINOW BPO / Excelデータ整備・クレンジング</div>
+      <h1>バラバラなExcelデータを整理して、<em>AIやシステムに使えるデータ</em>に変換する</h1>
+      <p class="hero-sub">複数部署・複数担当者が管理するExcelデータの表記ゆれ・重複・項目不統一を整理し、AIやCRM・FAQシステムに移行できる形式に整備します。</p>
+      <p class="hero-desc">顧客台帳・商品台帳・問い合わせ台帳・社員名簿など、あらゆる業務Excelを対象に、データの品質を整えます。</p>
+      <div class="hero-btns">
+        <a href="#contact-form" class="btn-white">無料相談を申し込む</a>
+        <a href="/bpo/" class="btn-ghost">サービス一覧を見る</a>
+      </div>
+      <div class="hero-note">Excelが何種類あっても対応可能。まず現状のデータ確認から始めます</div>
+    </div>
+  </div>
+
+  <div class="lp">
+
+    <!-- Target -->
+    <div class="section">
+      <div class="sl">01 / TARGET</div>
+      <h2>こんな課題をお持ちの企業様へ</h2>
+      <p class="lead">Excelデータの管理や活用に課題を感じているチームをサポートします。</p>
+      <div class="target-grid">
+        <div class="target-card">
+          <span class="target-icon">📊</span>
+          <div class="target-body">
+            <strong>複数部署で別々のExcelを管理しており、統合したい</strong>
+            <p>営業・管理・顧客サービス部門</p>
+          </div>
+        </div>
+        <div class="target-card">
+          <span class="target-icon">🗃️</span>
+          <div class="target-body">
+            <strong>顧客台帳や商品台帳の表記がバラバラで、検索・集計できない</strong>
+            <p>営業事務・EC運営部門</p>
+          </div>
+        </div>
+        <div class="target-card">
+          <span class="target-icon">💻</span>
+          <div class="target-body">
+            <strong>AIやCRM・基幹システムへデータを移行したい</strong>
+            <p>IT・DX推進部門</p>
+          </div>
+        </div>
+        <div class="target-card">
+          <span class="target-icon">📋</span>
+          <div class="target-body">
+            <strong>FAQやナレッジシステムに登録するマスターデータを整備したい</strong>
+            <p>カスタマーサポート・管理部門</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Issues -->
+    <div class="section">
+      <div class="sl">02 / ISSUES</div>
+      <h2>Excelデータが活用できない6つの課題</h2>
+      <p class="lead">多くの企業で共通するExcelデータの問題点をまとめました。</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 01</div>
+          <strong>同じ顧客が「株式会社A」「（株）A」「A株式会社」と複数の表記で登録されている</strong>
+          <p>重複登録により、正確な顧客数・取引履歴を把握できません</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 02</div>
+          <strong>複数部署のExcelで、項目名・列の順序がバラバラ</strong>
+          <p>「会社名」「企業名」「顧客名」など、同じ項目が違う名前で管理されています</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 03</div>
+          <strong>データに空欄・異常値・入力誤りが多い</strong>
+          <p>電話番号の桁数が違う、郵便番号の書式が統一されていないなど</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 04</div>
+          <strong>最新データがどのファイルにあるか不明</strong>
+          <p>「コピー」「最新」「修正版」など、複数の似たファイルが存在します</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 05</div>
+          <strong>AIやシステムへの移行時にデータエラーが出る</strong>
+          <p>整備されていないデータをそのまま移行すると、インポートエラーや誤動作が起きます</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-num">ISSUE 06</div>
+          <strong>データ整備の担当者がいない</strong>
+          <p>本来の業務と並行してデータ整備まで手が回りません</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Process -->
+    <div class="section">
+      <div class="sl">03 / PROCESS</div>
+      <h2>Excelデータ整備の進め方</h2>
+      <p class="lead">棚卸しからクレンジング・統合・納品まで、4ステップで対応します。</p>
+      <div class="process-steps">
+        <div class="pstep">
+          <div class="pstep-n">01</div>
+          <div>
+            <strong>現状把握・データ棚卸し</strong>
+            <p>対象のExcelファイルを一覧化し、項目・件数・重複状況・更新履歴を確認します</p>
+            <div class="pstep-eg">例：12部署×複数Excelを一覧化して重複状況を把握</div>
+          </div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-n">02</div>
+          <div>
+            <strong>クレンジング・表記統一</strong>
+            <p>表記ゆれ・重複・空欄・異常値を整理し、項目名・書式を統一します</p>
+            <div class="pstep-eg">例：「株式会社」「(株)」の表記を統一、郵便番号フォーマットを修正</div>
+          </div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-n">03</div>
+          <div>
+            <strong>統合・マスターデータ作成</strong>
+            <p>複数Excelを1つのマスターデータに統合。重複を除去した上でクリーンなデータを作成します</p>
+            <div class="pstep-eg">例：3部署の顧客台帳→重複除去後1,200件の統合マスターを作成</div>
+          </div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-n">04</div>
+          <div>
+            <strong>形式変換・納品</strong>
+            <p>AI・CRM・FAQシステムへの移行に必要な形式（CSV・JSON等）で納品します</p>
+            <div class="pstep-eg">例：Salesforceインポート用CSVとして納品</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Deliverables -->
+    <div class="section">
+      <div class="sl">04 / DELIVERABLES</div>
+      <h2>納品物</h2>
+      <p class="lead">整備したデータと確認資料をセットで納品します。</p>
+      <div class="deliver-grid">
+        <div class="deliver-card">
+          <span class="deliver-icon">📊</span>
+          <div class="deliver-title">整備済みマスターデータ（Excel/CSV）</div>
+          <div class="deliver-desc">表記統一・重複除去・異常値修正済みのクリーンなデータ</div>
+        </div>
+        <div class="deliver-card">
+          <span class="deliver-icon">📋</span>
+          <div class="deliver-title">クレンジングレポート</div>
+          <div class="deliver-desc">変更内容・修正理由・件数変化を記録した作業ログ</div>
+        </div>
+        <div class="deliver-card">
+          <span class="deliver-icon">✅</span>
+          <div class="deliver-title">統合前後の件数比較表</div>
+          <div class="deliver-desc">元データと整備後データの件数・変更点を比較した確認資料</div>
+        </div>
+        <div class="deliver-card">
+          <span class="deliver-icon">🤖</span>
+          <div class="deliver-title">システム移行用インポートデータ</div>
+          <div class="deliver-desc">指定システムのインポート形式に合わせたデータファイル</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Flow -->
+    <div class="section">
+      <div class="sl">05 / FLOW</div>
+      <h2>ご依頼から納品までの流れ</h2>
+      <p class="lead">ヒアリングから納品まで、透明なプロセスで進めます。</p>
+      <div class="flow-list">
+        <div class="flow-item">
+          <div class="flow-n">1</div>
+          <div>
+            <div class="flow-title">ヒアリング・データ確認</div>
+            <div class="flow-desc">対象のExcelファイルを確認し、整備の優先順位・目的をヒアリングします</div>
+            <span class="flow-period">1〜2営業日</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-n">2</div>
+          <div>
+            <div class="flow-title">サンプルクレンジング・確認</div>
+            <div class="flow-desc">一部データをサンプル整理し、クレンジング方針をご確認いただきます</div>
+            <span class="flow-period">3〜5営業日</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-n">3</div>
+          <div>
+            <div class="flow-title">本クレンジング・統合</div>
+            <div class="flow-desc">全データの整備・統合を実施。進捗は週次で報告します</div>
+            <span class="flow-period">規模による</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-n">4</div>
+          <div>
+            <div class="flow-title">品質チェック・確認</div>
+            <div class="flow-desc">件数・内容をダブルチェックし、確認資料を提出します</div>
+            <span class="flow-period">2〜3営業日</span>
+          </div>
+        </div>
+        <div class="flow-item">
+          <div class="flow-n">5</div>
+          <div>
+            <div class="flow-title">納品・移行サポート</div>
+            <div class="flow-desc">指定形式で納品。システム移行時のデータ検証もサポートします</div>
+            <span class="flow-period">納品日</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Benefits -->
+    <div class="section">
+      <div class="sl">06 / BENEFITS</div>
+      <h2>データ整備で得られる効果</h2>
+      <p class="lead">クリーンなデータが業務とAI活用の基盤になります。</p>
+      <div class="benefit-grid">
+        <div class="benefit-card">
+          <span class="benefit-icon">🔍</span>
+          <div class="benefit-title">データが正確になり、正しい集計・分析ができる</div>
+          <div class="benefit-desc">重複・表記ゆれが解消されることで、顧客数・取引額などの集計が正確になります</div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">💻</span>
+          <div class="benefit-title">AIやシステムへスムーズに移行できる</div>
+          <div class="benefit-desc">クリーンなデータをインポートすることで、エラーや誤動作を防ぎます</div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">📈</span>
+          <div class="benefit-title">AI回答精度が上がる</div>
+          <div class="benefit-desc">商品情報・顧客情報が正確に整備されていれば、AIが正確な情報を返せます</div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">⏱️</span>
+          <div class="benefit-title">データ探しの時間を削減</div>
+          <div class="benefit-desc">マスターデータが1本にまとまることで、どのファイルが正しいか迷う時間がなくなります</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Merits -->
+    <div class="section">
+      <div class="sl">07 / WHY BRAINOW</div>
+      <h2>BRAINOWに依頼するメリット</h2>
+      <p class="lead">データ整備からAI活用まで、一貫してサポートします。</p>
+      <div class="merit-grid">
+        <div class="merit-card">
+          <div class="m-icon">🔗</div>
+          <strong>整備したデータをBRAINOWに直接投入</strong>
+          <p>商品情報・FAQデータに整備したExcelをそのまま社内AIのナレッジとして活用できます</p>
+        </div>
+        <div class="merit-card">
+          <div class="m-icon">📋</div>
+          <strong>データ品質のルール整備も支援</strong>
+          <p>今後の入力ルール・更新フローも含めて設計し、再びデータが乱れない体制を作ります</p>
+        </div>
+        <div class="merit-card">
+          <div class="m-icon">🔄</div>
+          <strong>継続的な更新対応も可能</strong>
+          <p>定期的にデータを最新化するプランをご用意しています</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- FAQ -->
+    <div class="section">
+      <div class="sl">08 / FAQ</div>
+      <h2>よくある質問</h2>
+      <p class="lead">Excelデータ整備に関するお問い合わせをまとめました。</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>どんなExcelでも対応できますか？</div>
+          <div class="faq-a">基本的にはどんな形式のExcelでも対応できます。関数・マクロが組み込まれている複雑なファイルは別途ご相談ください。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>何件のデータから依頼できますか？</div>
+          <div class="faq-a">数百件から対応できます。大量データ（数万件以上）も対応できますが、規模に応じた見積もりを行います。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>データを預けることへのセキュリティは大丈夫ですか？</div>
+          <div class="faq-a">NDA締結の上で対応します。受け取ったデータは業務目的以外では使用せず、納品後は適切に廃棄します。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>複数ファイルを統合する場合、どのファイルが正しいか判断できますか？</div>
+          <div class="faq-a">更新日・作成者・内容の整合性を確認しながら、どのデータを正とするかをご相談の上で進めます。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-qb">Q</span>整備後のデータ更新ルール作りも依頼できますか？</div>
+          <div class="faq-a">はい、今後の入力ルール・フォーマット統一・更新フローの設計もサポートします。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CTA -->
+    <div id="contact-form" class="section">
+      <div class="cta-block">
+        <div class="cta-label">無料相談</div>
+        <h2>自社のExcelデータがAIやシステムに活用できる状態かどうか、無料で確認します</h2>
+        <p>現在お持ちのExcelデータを確認し、クレンジング・統合・移行準備に何が必要かをご案内します。</p>
+        <ul class="cta-reassure">
+          <li>✦ 初回ヒアリング無料</li>
+          <li>✦ どんな形式のExcelも対応</li>
+          <li>✦ NDA締結対応</li>
+          <li>✦ 少量から依頼可能</li>
+        </ul>
+      </div>
+
+      <div class="form-wrap">
+        <form id="page-form" action="https://formspree.io/f/xbdvlnkn" method="POST">
+          <input type="hidden" name="_subject" value="【BRAINOW BPO】Excelデータ整備のお問い合わせ">
+          <input type="hidden" name="種別" value="Excelデータ整備・クレンジング">
+
+          <div class="form-grid">
+            <div class="form-group full">
+              <label>会社名<span class="req">必須</span></label>
+              <input type="text" name="company" required placeholder="例：株式会社サンプル">
+            </div>
+            <div class="form-group full">
+              <label>お名前<span class="req">必須</span></label>
+              <input type="text" name="name" required placeholder="例：山田 太郎">
+            </div>
+            <div class="form-group full">
+              <label>メールアドレス<span class="req">必須</span></label>
+              <input type="email" name="email" required placeholder="例：taro@example.com">
+            </div>
+            <div class="form-group full">
+              <label>電話番号<span class="opt">任意</span></label>
+              <input type="tel" name="phone" placeholder="例：03-0000-0000">
+            </div>
+            <div class="form-group full">
+              <label>データ種類<span class="opt">任意</span></label>
+              <select name="data_type">
+                <option value="">選択してください</option>
+                <option value="顧客台帳">顧客台帳</option>
+                <option value="商品台帳">商品台帳</option>
+                <option value="問い合わせ台帳">問い合わせ台帳</option>
+                <option value="社員名簿">社員名簿</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label>お問い合わせ内容<span class="opt">任意</span></label>
+              <textarea name="message" rows="5" placeholder="現在のExcelの状況や整備したい内容をご記入ください"></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="form-submit">無料相談を申し込む</button>
+        </form>
+
+        <div class="success-msg" style="display:none;">
+          <div class="s-icon">✓</div>
+          <p>送信が完了しました。担当者より1〜2営業日以内にご連絡いたします。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Related -->
+    <div class="section">
+      <div class="sl">RELATED</div>
+      <h2>関連するBPOサービス</h2>
+      <p class="lead">Excelデータ整備と合わせてご活用いただけるサービスです。</p>
+      <div class="related-grid">
+        <a href="../faq/" class="related-card">
+          <span class="rc-icon">📋</span>
+          <div class="rc-title">FAQ作成・整備代行</div>
+          <div class="rc-desc">問い合わせ履歴からFAQデータを整備</div>
+        </a>
+        <a href="../pdf/" class="related-card">
+          <span class="rc-icon">📄</span>
+          <div class="rc-title">PDFデータ整理・構造化</div>
+          <div class="rc-desc">PDF資料をAI検索対応に変換</div>
+        </a>
+        <a href="../ec/" class="related-card">
+          <span class="rc-icon">🏪</span>
+          <div class="rc-title">EC・通販向けBPO</div>
+          <div class="rc-desc">商品情報・顧客データの整備</div>
+        </a>
+        <a href="../voc/" class="related-card">
+          <span class="rc-icon">📣</span>
+          <div class="rc-title">VOC分析・ナレッジ化</div>
+          <div class="rc-desc">問い合わせ履歴の分類とFAQ化</div>
+        </a>
+        <a href="../" class="related-card">
+          <span class="rc-icon">🏭</span>
+          <div class="rc-title">RAGデータ整備BPOトップ</div>
+          <div class="rc-desc">BPOサービス全体のご案内</div>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /lp -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Momentum Architect株式会社 ／ <a href="/">BRAINOW</a> ／ <a href="/bpo/">BPOサービス</a> ／ <a href="mailto:brainow-ai@momentum-arc.jp">brainow-ai@momentum-arc.jp</a></p>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('page-form');
+      var successMsg = document.querySelector('.success-msg');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('.form-submit');
+        var originalText = btn.textContent;
+        btn.textContent = '送信中...';
+        btn.disabled = true;
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (res) {
+          if (res.ok) {
+            form.style.display = 'none';
+            successMsg.style.display = 'block';
+          } else {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            alert('送信に失敗しました。時間をおいて再度お試しください。');
+          }
+        }).catch(function () {
+          btn.textContent = originalText;
+          btn.disabled = false;
+          alert('送信に失敗しました。時間をおいて再度お試しください。');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
