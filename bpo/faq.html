@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社内FAQ｜BPOサービス運用マニュアル</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brand-dark:   #1B2545;
+    --brand-mid:    #2C3E70;
+    --brand-base:   #44599B;
+    --brand-light:  #93A8DE;
+    --brand-pale:   #C3D0F0;
+    --brand-bg:     #EEF1FA;
+    --brand-border: #D2DBF2;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5f6368;
+    --text-muted:   #9aa0a6;
+    --bg-page:      #f8f8f9;
+    --bg-card:      #ffffff;
+    --bg-surface:   #f2f3f7;
+    --border:       rgba(0,0,0,0.1);
+    --border-light: rgba(0,0,0,0.07);
+    --radius-sm:    8px;
+    --radius-md:    12px;
+    --radius-lg:    16px;
+    --green:        #1a8a4a;
+    --green-bg:     #e8f5ed;
+    --red:          #c0392b;
+    --red-bg:       #fdf0ef;
+    --amber:        #8A5B00;
+    --amber-bg:     #FFF6E0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text-primary);
+    background: var(--bg-page);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--brand-dark);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .site-header .logo {
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+  .site-header .logo span { color: var(--brand-light); }
+  .header-badge {
+    background: rgba(195,208,240,.16);
+    border: 1px solid rgba(195,208,240,.3);
+    color: var(--brand-pale);
+    font-size: 11px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    letter-spacing: .08em;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--brand-dark);
+    color: #fff;
+    padding: 4rem 2rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(147,168,222,.12);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -40px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(195,208,240,.07);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(195,208,240,.14);
+    border: 1px solid rgba(195,208,240,.35);
+    color: var(--brand-pale);
+    font-size: 11px;
+    padding: 4px 16px;
+    border-radius: 20px;
+    letter-spacing: .1em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    position: relative; z-index: 1;
+  }
+  .hero h1 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: #fff;
+    position: relative; z-index: 1;
+  }
+  .hero h1 em { font-style: normal; color: var(--brand-light); }
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,.65);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.9;
+    position: relative; z-index: 1;
+  }
+
+  /* ── SEARCH ── */
+  .search-wrap {
+    max-width: 640px;
+    margin: 2.5rem auto 0;
+    position: relative; z-index: 1;
+  }
+  .search-wrap input {
+    width: 100%;
+    padding: 14px 48px 14px 20px;
+    border-radius: 50px;
+    border: none;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    background: #fff;
+    color: var(--text-primary);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  }
+  .search-wrap input::placeholder { color: var(--text-muted); }
+  .search-icon {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--brand-base);
+    font-size: 18px;
+    pointer-events: none;
+  }
+  .search-count {
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,.5);
+    margin-top: 10px;
+    position: relative; z-index: 1;
+    min-height: 18px;
+  }
+
+  /* ── LAYOUT ── */
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  /* ── CATEGORY TABS ── */
+  .cat-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .cat-tab {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.18s;
+  }
+  .cat-tab:hover { border-color: var(--brand-base); color: var(--brand-base); }
+  .cat-tab.active {
+    background: var(--brand-dark);
+    border-color: var(--brand-dark);
+    color: #fff;
+  }
+
+  /* ── FAQ CATEGORY GROUP ── */
+  .faq-group { margin-bottom: 3rem; }
+  .faq-group-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--brand-bg);
+  }
+  .faq-group-icon {
+    width: 34px; height: 34px;
+    background: var(--brand-bg);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .faq-group-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--brand-dark);
+  }
+  .faq-group-count {
+    margin-left: auto;
+    background: var(--brand-bg);
+    color: var(--brand-base);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+  }
+
+  /* ── FAQ ITEMS ── */
+  .faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    margin-bottom: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .faq-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+  .faq-item.hidden { display: none; }
+
+  .faq-q {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 18px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+  .faq-q .q-badge {
+    flex-shrink: 0;
+    width: 24px; height: 24px;
+    background: var(--brand-bg);
+    color: var(--brand-base);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+  .faq-q .q-text { flex: 1; }
+  .faq-q .q-arrow {
+    flex-shrink: 0;
+    font-size: 18px;
+    color: var(--brand-light);
+    transition: transform 0.3s;
+    margin-top: 2px;
+  }
+  .faq-q.open .q-arrow { transform: rotate(180deg); }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+    padding: 0 20px 0 58px;
+  }
+  .faq-a.open { max-height: 600px; padding: 0 20px 20px 58px; }
+
+  .faq-a-inner {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    border-top: 1px solid var(--border-light);
+    padding-top: 16px;
+  }
+  .faq-a-inner p { margin-bottom: 10px; }
+  .faq-a-inner p:last-child { margin-bottom: 0; }
+  .faq-a-inner ul { padding-left: 1.2em; margin-bottom: 10px; }
+  .faq-a-inner li { margin-bottom: 4px; }
+  .faq-a-inner strong { color: var(--text-primary); }
+
+  /* ── TAGS ── */
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .tag-important { background: var(--red-bg); color: var(--red); }
+  .tag-new       { background: #e8f0fe; color: #1a55cc; }
+  .tag-updated   { background: var(--green-bg); color: var(--green); }
+  .tag-policy    { background: var(--amber-bg); color: var(--amber); }
+
+  /* ── NO RESULTS ── */
+  .no-results {
+    display: none;
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--text-muted);
+  }
+  .no-results.show { display: block; }
+  .no-results .nr-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .no-results p { font-size: 14px; }
+
+  /* ── QUICK LINKS ── */
+  .quick-links {
+    background: var(--brand-bg);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .quick-links h3 { font-size: 13px; font-weight: 700; color: var(--brand-dark); margin-bottom: 1rem; }
+  .quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px;
+  }
+  .ql-item {
+    background: #fff;
+    border: 1px solid var(--brand-border);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 13px;
+    transition: border-color 0.18s, background 0.18s;
+    cursor: pointer;
+  }
+  .ql-item:hover { border-color: var(--brand-base); background: var(--brand-bg); }
+  .ql-item span { font-size: 16px; }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--brand-dark);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    font-size: 12px;
+    padding: 1.5rem;
+  }
+
+  /* ── HIGHLIGHT ── */
+  mark { background: #fff3cd; color: inherit; border-radius: 2px; padding: 0 2px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .faq-a.open { padding-left: 20px; }
+    .content { padding: 2rem 1rem 4rem; }
+    .hero { padding: 3rem 1.5rem 2.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <a href="/bpo/" class="logo">BRAINOW <span>BPO</span></a>
+  <span class="header-badge">社内用</span>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-badge">Internal FAQ</div>
+  <h1>BPOサービス<em>社内FAQ</em></h1>
+  <p class="hero-sub">スタッフ向け運用マニュアル・よくある質問集。<br>業務上の疑問はまずこちらで確認してください。</p>
+  <div class="search-wrap">
+    <input type="text" id="faq-search" placeholder="キーワードで検索（例：エスカレーション、納期、クライアント対応）" autocomplete="off">
+    <span class="search-icon">🔍</span>
+  </div>
+  <div class="search-count" id="search-count"></div>
+</div>
+
+<!-- Content -->
+<div class="content">
+
+  <!-- Quick Links -->
+  <div class="quick-links">
+    <h3>📌 よく見られるカテゴリ</h3>
+    <div class="quick-links-grid">
+      <div class="ql-item" onclick="filterCat('受注・納期')"><span>📋</span>受注・納期</div>
+      <div class="ql-item" onclick="filterCat('クライアント対応')"><span>🤝</span>クライアント対応</div>
+      <div class="ql-item" onclick="filterCat('エスカレーション')"><span>🚨</span>エスカレーション</div>
+      <div class="ql-item" onclick="filterCat('ツール・システム')"><span>🖥️</span>ツール・システム</div>
+      <div class="ql-item" onclick="filterCat('品質管理')"><span>✅</span>品質管理</div>
+      <div class="ql-item" onclick="filterCat('情報管理・セキュリティ')"><span>🔒</span>情報管理</div>
+    </div>
+  </div>
+
+  <!-- Category Tabs -->
+  <div class="cat-tabs" id="cat-tabs">
+    <button class="cat-tab active" onclick="filterCat('all')">すべて</button>
+    <button class="cat-tab" onclick="filterCat('受注・納期')">受注・納期</button>
+    <button class="cat-tab" onclick="filterCat('クライアント対応')">クライアント対応</button>
+    <button class="cat-tab" onclick="filterCat('エスカレーション')">エスカレーション</button>
+    <button class="cat-tab" onclick="filterCat('ツール・システム')">ツール・システム</button>
+    <button class="cat-tab" onclick="filterCat('品質管理')">品質管理</button>
+    <button class="cat-tab" onclick="filterCat('情報管理・セキュリティ')">情報管理</button>
+  </div>
+
+  <!-- No Results -->
+  <div class="no-results" id="no-results">
+    <div class="nr-icon">🔍</div>
+    <p>「<strong id="no-results-kw"></strong>」に一致するFAQが見つかりませんでした。<br>別のキーワードで検索してください。</p>
+  </div>
+
+  <!-- ── カテゴリ：受注・納期 ── -->
+  <div class="faq-group" data-cat="受注・納期" id="group-受注納期">
+    <div class="faq-group-header">
+      <div class="faq-group-icon">📋</div>
+      <span class="faq-group-title">受注・納期</span>
+      <span class="faq-group-count" data-cat-count="受注・納期"></span>
+    </div>
+
+    <div class="faq-item" data-cat="受注・納期" data-keywords="受注 案件 確認 フロー 流れ">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text">新規案件を受注したらまず何をすればいいですか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <p>受注後の基本フローは以下の通りです。</p>
+          <ul>
+            <li><strong>①案件シートの作成</strong>：Notionの「案件管理」に案件名・クライアント名・納期・担当者を登録</li>
+            <li><strong>②キックオフMTGの設定</strong>：受注から2営業日以内にクライアントと初回確認MTGをセット</li>
+            <li><strong>③業務手順書の確認</strong>：既存クライアントの場合は過去の手順書を引き継ぎ、新規の場合はヒアリングシートを送付</li>
+            <li><strong>④Slackチャンネルの作成</strong>：「bpo-[クライアント名略称]」でチャンネルを作成し、担当者をアサイン</li>
+          </ul>
+          <p>不明点はリーダーに都度確認してください。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="受注・納期" data-keywords="納期 遅延 間に合わない 延長 スケジュール">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text"><span class="tag tag-important">重要</span>納期に間に合わない可能性が出てきたらどうすればいいですか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <p><strong>気づいた時点で即座にリーダーへ報告してください。</strong>「なんとかなるかも」と抱え込むのが一番NGです。</p>
+          <ul>
+            <li>遅延リスクに気づいたら、その日中にSlack「#bpo-escalation」へ報告</li>
+            <li>報告内容：案件名・現在の進捗率・見込み完了日・遅延の原因</li>
+            <li>クライアントへの連絡はリーダー判断で行います。スタッフが直接謝罪・交渉するのはNG</li>
+          </ul>
+          <p>早期報告であれば対応策（人員追加・一部納品など）が取れます。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="受注・納期" data-keywords="見積もり 料金 単価 費用 追加">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text">クライアントから追加作業の依頼があった場合、費用はどう対応しますか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <p>追加作業が発生した場合は、<strong>必ずリーダーに確認してから</strong>クライアントへ回答してください。</p>
+          <ul>
+            <li>追加費用が発生するかどうかの判断はリーダーが行います</li>
+            <li>スタッフが「無料でやります」「金額はXX円です」と独断で答えるのは厳禁</li>
+            <li>「確認してご連絡します」と伝えて一度保留にしてください</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="受注・納期" data-keywords="進捗 報告 タイミング 頻度 共有">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text">進捗報告はいつ、どのように行えばいいですか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <ul>
+            <li><strong>日次</strong>：毎日17:00までに各案件のSlackチャンネルに進捗を投稿（完了件数・残件数・特記事項）</li>
+            <li><strong>週次</strong>：月曜朝に週間スケジュールをリーダーに共有</li>
+            <li><strong>クライアントへの報告</strong>：契約ごとに頻度が異なるため、案件シートの「報告サイクル」欄を確認</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── カテゴリ：クライアント対応 ── -->
+  <div class="faq-group" data-cat="クライアント対応" id="group-クライアント対応">
+    <div class="faq-group-header">
+      <div class="faq-group-icon">🤝</div>
+      <span class="faq-group-title">クライアント対応</span>
+      <span class="faq-group-count" data-cat-count="クライアント対応"></span>
+    </div>
+
+    <div class="faq-item" data-cat="クライアント対応" data-keywords="メール 返信 連絡 対応時間 営業時間">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text">クライアントからのメール・連絡への返信は何時間以内に行うべきですか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <ul>
+            <li><strong>営業時間内（9:00〜18:00）</strong>：原則2時間以内に一次返信</li>
+            <li><strong>18:00以降・休日</strong>：翌営業日10:00までに返信（緊急の場合はリーダーへ転送）</li>
+            <li>内容が不明な場合も「確認中」の旨を一次返信し、放置は絶対にNG</li>
+          </ul>
+          <p>クライアントのSlackへの返信も同様のルールで対応してください。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="クライアント対応" data-keywords="クレーム 苦情 不満 謝罪 トラブル">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text"><span class="tag tag-important">重要</span>クライアントからクレームや強い不満を受けた場合はどうすればいいですか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <p><strong>その場で謝罪・原因説明・対応策の提示は行わないでください。</strong></p>
+          <ul>
+            <li>まず「ご不便をおかけして申し訳ございません。担当リーダーと確認の上、改めてご連絡いたします」と伝える</li>
+            <li>直ちにSlack「#bpo-escalation」にクレーム内容・日時・クライアント名を投稿</li>
+            <li>リーダーが対応方針を決定してから、クライアントへの正式な回答を行う</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="クライアント対応" data-keywords="要望 仕様変更 追加 依頼 対応範囲">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text">契約範囲外の作業を頼まれた場合はどうすればいいですか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <ul>
+            <li>「確認してからご回答します」と伝え、即答しない</li>
+            <li>リーダーに案件名・依頼内容・ボリューム感を共有</li>
+            <li>対応可否・追加費用の有無はリーダーが判断してクライアントへ回答</li>
+          </ul>
+          <p>善意で「ちょっとだけ」やってしまうと、後々の無料対応期待につながるため注意してください。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="クライアント対応" data-keywords="電話 着信 不在 折り返し">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text">クライアントから直接電話がかかってきた場合の対応は？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <p>基本的にクライアントとの連絡はSlack・メールを通じて行います。直接電話があった場合は：</p>
+          <ul>
+            <li>対応可能な内容（進捗確認など）は丁寧に対応</li>
+            <li>判断が必要な内容は「確認してご連絡します」と伝え、リーダーに引き継ぐ</li>
+            <li>通話内容の概要をSlackに投稿しておく</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── カテゴリ：エスカレーション ── -->
+  <div class="faq-group" data-cat="エスカレーション" id="group-エスカレーション">
+    <div class="faq-group-header">
+      <div class="faq-group-icon">🚨</div>
+      <span class="faq-group-title">エスカレーション</span>
+      <span class="faq-group-count" data-cat-count="エスカレーション"></span>
+    </div>
+
+    <div class="faq-item" data-cat="エスカレーション" data-keywords="エスカレーション 判断 基準 相談 リーダー">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text"><span class="tag tag-policy">ルール</span>どんなときにリーダーへエスカレーションすればいいですか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <p>以下のいずれかに該当する場合は必ずエスカレーションしてください。</p>
+          <ul>
+            <li>納期遅延・品質問題が発生・または発生しそうな場合</li>
+            <li>クライアントからのクレーム・強い要望があった場合</li>
+            <li>契約範囲外の作業依頼があった場合</li>
+            <li>手順書にない判断を求められた場合</li>
+            <li>個人情報・機密情報に関わる問い合わせがあった場合</li>
+            <li>5分以上考えても判断がつかない場合</li>
+          </ul>
+          <p>「報連相を過剰にすることはない」という方針で動いてください。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="エスカレーション" data-keywords="緊急 連絡先 休日 夜間 急ぎ">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text">営業時間外に緊急トラブルが発生した場合の連絡先は？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <ul>
+            <li><strong>Slack「#bpo-escalation」</strong>に投稿（リーダーに通知が届きます）</li>
+            <li>重大案件（データ漏洩・システム障害など）は、Slackに加えてリーダーへ電話連絡</li>
+            <li>緊急連絡先はNotionの「スタッフハンドブック＞緊急連絡先」を参照</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="エスカレーション" data-keywords="ミス エラー 誤送信 間違い 修正">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text"><span class="tag tag-important">重要</span>作業ミス（誤送信・データ誤記入など）が発覚した場合は？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <p><strong>発覚したらすぐに報告。自己判断で修正・隠蔽は絶対にNGです。</strong></p>
+          <ul>
+            <li>作業を止めて、まずリーダーにSlackで報告</li>
+            <li>報告内容：何を・いつ・どのように間違えたか、影響範囲の見当</li>
+            <li>クライアントへの連絡・訂正対応はリーダーが指示します</li>
+            <li>再発防止のために、後日振り返りを行います（責任追及ではなく改善が目的）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── カテゴリ：ツール・システム ── -->
+  <div class="faq-group" data-cat="ツール・システム" id="group-ツールシステム">
+    <div class="faq-group-header">
+      <div class="faq-group-icon">🖥️</div>
+      <span class="faq-group-title">ツール・システム</span>
+      <span class="faq-group-count" data-cat-count="ツール・システム"></span>
+    </div>
+
+    <div class="faq-item" data-cat="ツール・システム" data-keywords="Notion 使い方 案件管理 データベース">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text">Notionの案件管理はどのように使えばいいですか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <ul>
+            <li><strong>案件ページ</strong>：受注時に新規作成。クライアント名・納期・担当者・ステータスを必ず入力</li>
+            <li><strong>ステータス</strong>：「受注済」→「進行中」→「納品済」→「完了」の順で更新</li>
+            <li><strong>手順書</strong>：各案件ページ内に作業手順を記載。引き継ぎ時に必ず最新化</li>
+            <li><strong>日次報告</strong>：各案件ページのコメント欄に進捗を投稿</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="ツール・システム" data-keywords="Slack チャンネル 使い方 ルール 投稿">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text">Slackのチャンネル運用ルールを教えてください。</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <ul>
+            <li><strong>#bpo-general</strong>：社内連絡・業務報告・お知らせ</li>
+            <li><strong>#bpo-escalation</strong>：緊急・エスカレーション専用。通知は全員ON推奨</li>
+            <li><strong>#bpo-[クライアント名]</strong>：案件ごとの進捗・クライアント連絡のログ</li>
+            <li><strong>#bpo-random</strong>：雑談OK</li>
+          </ul>
+          <p>クライアントを招待しているチャンネルでは業務に関係のない発言はしないこと。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="ツール・システム" data-keywords="システム 障害 ログイン できない 不具合">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text">ツールにログインできない・システム障害が発生した場合は？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <ul>
+            <li>まずブラウザの再起動・別ブラウザでの確認を試みる</li>
+            <li>解消しない場合はSlack「#bpo-general」に状況を報告</li>
+            <li>業務に影響が出る場合はリーダーへ即報告</li>
+            <li>クライアント側のシステム障害の場合は、クライアントへの連絡前にリーダーに確認</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="ツール・システム" data-keywords="パスワード 共有 アカウント 権限">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text"><span class="tag tag-policy">ルール</span>クライアントのシステムアカウント・パスワードの管理方法は？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <ul>
+            <li>アカウント情報は必ずNotionの「認証情報管理」ページ（閲覧制限あり）に登録</li>
+            <li>Slack・メール・チャットへのパスワード平文送信は禁止</li>
+            <li>共有が必要な場合は1Passwordの共有機能を使用</li>
+            <li>案件終了時にはアカウントの削除・権限変更をクライアントへ依頼</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── カテゴリ：品質管理 ── -->
+  <div class="faq-group" data-cat="品質管理" id="group-品質管理">
+    <div class="faq-group-header">
+      <div class="faq-group-icon">✅</div>
+      <span class="faq-group-title">品質管理</span>
+      <span class="faq-group-count" data-cat-count="品質管理"></span>
+    </div>
+
+    <div class="faq-item" data-cat="品質管理" data-keywords="チェック ダブルチェック 確認 ミス 防止">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text">作業のダブルチェックはどのタイミングで、誰が行いますか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <ul>
+            <li><strong>データ入力系</strong>：作業者が自己チェック後、別スタッフが件数・内容をサンプルチェック（10%以上）</li>
+            <li><strong>メール・文書作成</strong>：必ずリーダーレビューを通してから送付</li>
+            <li><strong>初回納品物</strong>：クライアントへ送る前にリーダーが必ず確認</li>
+            <li><strong>定型作業</strong>：チェックリストへの記入で代替可（案件ごとに設定）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="品質管理" data-keywords="手順書 マニュアル 作成 更新 引き継ぎ">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text"><span class="tag tag-new">重要</span>手順書はいつ更新すればいいですか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <p>手順書は「生きたドキュメント」として常に最新の状態を保ってください。</p>
+          <ul>
+            <li>作業フローに変更があったとき（即日更新）</li>
+            <li>クライアントから仕様変更の連絡があったとき</li>
+            <li>担当者交代・引き継ぎの前（必ず確認・更新）</li>
+            <li>月次で定期レビュー（内容が正確か確認）</li>
+          </ul>
+          <p>古い手順書をそのまま使うとミスの原因になります。「最終更新日」を必ず記載してください。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="品質管理" data-keywords="納品 検収 完了 確認 フォーマット">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text">納品物のフォーマット・提出方法はどこで確認できますか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <ul>
+            <li>各案件のNotion案件ページ内「納品仕様」セクションを参照</li>
+            <li>新規案件はキックオフMTGでクライアントと確認・Notionに記録</li>
+            <li>フォーマットに迷った場合はリーダーへ確認。独自判断でフォーマット変更は禁止</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── カテゴリ：情報管理・セキュリティ ── -->
+  <div class="faq-group" data-cat="情報管理・セキュリティ" id="group-情報管理セキュリティ">
+    <div class="faq-group-header">
+      <div class="faq-group-icon">🔒</div>
+      <span class="faq-group-title">情報管理・セキュリティ</span>
+      <span class="faq-group-count" data-cat-count="情報管理・セキュリティ"></span>
+    </div>
+
+    <div class="faq-item" data-cat="情報管理・セキュリティ" data-keywords="個人情報 顧客情報 取り扱い 漏洩 禁止">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text"><span class="tag tag-important">重要</span>クライアントの個人情報・顧客データの取り扱いルールを教えてください。</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <ul>
+            <li>業務目的以外での閲覧・利用は厳禁</li>
+            <li>個人情報を含むデータをメール・チャットで送信する場合は暗号化（パスワード付きzip）必須</li>
+            <li>クラウドストレージへのアップロードは指定のフォルダのみ使用可能</li>
+            <li>個人のPCへのダウンロード・USB保存は原則禁止（例外はリーダー承認が必要）</li>
+            <li>業務外の端末（私物スマホ等）でのデータアクセスは禁止</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="情報管理・セキュリティ" data-keywords="外部 持ち出し 共有 第三者 開示">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text">業務情報を社外・第三者に話してもいいですか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <p><strong>原則として社外への情報共有は全て禁止です。</strong></p>
+          <ul>
+            <li>クライアント名・案件内容・担当者名・売上情報は外部に漏らさない</li>
+            <li>SNSへの業務関連投稿は禁止（「仕事が大変」といった漠然とした内容も含む）</li>
+            <li>家族・友人への業務内容の話も注意（NDA対象）</li>
+          </ul>
+          <p>違反した場合は契約解除・損害賠償の対象となる可能性があります。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" data-cat="情報管理・セキュリティ" data-keywords="AI ChatGPT 利用 禁止 許可">
+      <button class="faq-q">
+        <span class="q-badge">Q</span>
+        <span class="q-text"><span class="tag tag-updated">更新</span>AIツール（ChatGPT等）の業務利用はOKですか？</span>
+        <span class="q-arrow">▾</span>
+      </button>
+      <div class="faq-a">
+        <div class="faq-a-inner">
+          <p>案件・用途によりルールが異なります。</p>
+          <ul>
+            <li><strong>OK</strong>：一般的な文章の校正・翻訳・アイデア出し（個人情報・クライアント情報を含まない場合）</li>
+            <li><strong>要確認</strong>：業務効率化目的での活用はリーダーへ相談</li>
+            <li><strong>NG</strong>：クライアントの顧客データ・個人情報・機密情報を入力すること</li>
+          </ul>
+          <p>迷ったらまずリーダーへ確認してください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>BRAINOW BPO 社内FAQ｜社内限定資料・外部共有禁止｜最終更新：2026年7月</p>
+</footer>
+
+<script>
+// ── アコーディオン ──
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    // 同カテゴリ内の他を閉じる（任意）
+    btn.classList.toggle('open', !isOpen);
+    answer.classList.toggle('open', !isOpen);
+  });
+});
+
+// ── カテゴリカウント ──
+function updateCounts() {
+  document.querySelectorAll('[data-cat-count]').forEach(el => {
+    const cat = el.dataset.catCount;
+    const total = document.querySelectorAll(`.faq-item[data-cat="${cat}"]`).length;
+    el.textContent = `${total}件`;
+  });
+}
+updateCounts();
+
+// ── カテゴリフィルター ──
+function filterCat(cat) {
+  // タブ更新
+  document.querySelectorAll('.cat-tab').forEach(t => {
+    t.classList.toggle('active', t.textContent.trim() === cat || (cat === 'all' && t.textContent.trim() === 'すべて'));
+  });
+
+  // グループ表示
+  document.querySelectorAll('.faq-group').forEach(g => {
+    g.style.display = (cat === 'all' || g.dataset.cat === cat) ? '' : 'none';
+  });
+
+  // アイテム
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.classList.toggle('hidden', cat !== 'all' && item.dataset.cat !== cat);
+  });
+
+  // 検索リセット
+  document.getElementById('faq-search').value = '';
+  document.getElementById('search-count').textContent = '';
+  document.getElementById('no-results').classList.remove('show');
+}
+
+// ── 検索 ──
+const searchInput = document.getElementById('faq-search');
+const searchCount = document.getElementById('search-count');
+const noResults = document.getElementById('no-results');
+
+searchInput.addEventListener('input', function () {
+  const kw = this.value.trim().toLowerCase();
+
+  // タブをリセット
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('.cat-tab').classList.add('active');
+  document.querySelectorAll('.faq-group').forEach(g => g.style.display = '');
+
+  // ハイライトリセット
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const qText = item.querySelector('.q-text');
+    qText.innerHTML = qText.innerHTML.replace(/<mark>(.*?)<\/mark>/g, '$1');
+  });
+
+  if (!kw) {
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('hidden'));
+    searchCount.textContent = '';
+    noResults.classList.remove('show');
+    return;
+  }
+
+  let count = 0;
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const qText = item.querySelector('.q-text').textContent.toLowerCase();
+    const keywords = (item.dataset.keywords || '').toLowerCase();
+    const answer = item.querySelector('.faq-a-inner') ? item.querySelector('.faq-a-inner').textContent.toLowerCase() : '';
+    const match = qText.includes(kw) || keywords.includes(kw) || answer.includes(kw);
+    item.classList.toggle('hidden', !match);
+    if (match) {
+      count++;
+      // グループ表示維持
+    }
+  });
+
+  // グループを空なら非表示
+  document.querySelectorAll('.faq-group').forEach(g => {
+    const visible = g.querySelectorAll('.faq-item:not(.hidden)').length > 0;
+    g.style.display = visible ? '' : 'none';
+  });
+
+  searchCount.textContent = kw ? `${count}件 ヒット` : '';
+  noResults.classList.toggle('show', count === 0);
+  if (count === 0) document.getElementById('no-results-kw').textContent = this.value.trim();
+});
+</script>
+</body>
+</html>
